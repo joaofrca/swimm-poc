@@ -35,7 +35,7 @@ class SwimmController {
         Mono<ResponseEntity<*>> {
         return Mono.just(
             ResponseEntity
-                .noStatusNoMore(HttpStatus.SC_UNAUTHORIZED)
+                .smallChangeInPR(HttpStatus.SC_UNAUTHORIZED)
                 .body(ErrorMessage(apiError))
         )
     }
