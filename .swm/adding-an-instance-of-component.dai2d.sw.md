@@ -3,6 +3,8 @@ id: dai2d
 name: 🔘 Adding an Instance of Component
 file_version: 1.0.2
 app_version: 0.7.6-1
+file_blobs:
+  swimm-poc/src/main/kotlin/com/talkdesk/industries/hlsproviders/integrationsfallback/SwimmPocApplication.kt: f400f432a0704ea15e90b5ea878a2e517d16fada
 ---
 
 Understanding {Component}s and how they work is an important part of contributing to our system.
@@ -22,13 +24,13 @@ We'll follow the implementation of {Example Component (an instance of Component)
 # TL;DR
 
 1.  Create a class inheriting from {base class} in {add a "/path" of a containing folder, and / or describe the file naming convention}
-
+    
 2.  Define {add class level variables / constants / types to define}
-
+    
 3.  Implement {add names of methods to implement}
-
+    
 4.  Update {add a file that needs to be updated with the new class (add class / name of class to a list, import it somewhere, etc.}
-
+    
 
 # Add the New Class
 
@@ -38,7 +40,35 @@ We first need to define our class in {mention relevant file}, and inherit from {
 
 <br/>
 
+<!-- NOTE-swimm-snippet: the lines below link your snippet to Swimm -->
+### 📄 swimm-poc/src/main/kotlin/com/talkdesk/industries/hlsproviders/integrationsfallback/SwimmPocApplication.kt
+```kotlin
+⬜ 8      @SpringBootApplication
+⬜ 9      class SwimmPocApplication
+⬜ 10     
+🟩 11     @ExcludeFromJacocoGeneratedReport
+🟩 12     fun main(args: Array<String>) {
+🟩 13         @Suppress("SpreadOperator")
+🟩 14         runApplication<SwimmPocApplication>(*args)
+⬜ 15     }
+⬜ 16     
+⬜ 17     fun rand(from: Int, to: Int) : Int {
+```
 
+<br/>
+
+<!-- NOTE-swimm-snippet: the lines below link your snippet to Swimm -->
+### 📄 swimm-poc/src/main/kotlin/com/talkdesk/industries/hlsproviders/integrationsfallback/SwimmPocApplication.kt
+```kotlin
+⬜ 2      
+⬜ 3      import com.talkdesk.industries.common.annotation.ExcludeFromJacocoGeneratedReport
+⬜ 4      import org.springframework.boot.autoconfigure.SpringBootApplication
+🟩 5      import org.springframework.boot.runApplication
+🟩 6      import org.springframework.context.annotation.ComponentScan
+⬜ 7      
+⬜ 8      @SpringBootApplication
+⬜ 9      class SwimmPocApplication
+```
 
 <br/>
 
@@ -54,17 +84,9 @@ Every {Component} should define these at the class level:
 
 <br/>
 
-
-
-<br/>
-
 # Implement {method names to implement}
 
 The goal of {first method} is to {explain what this method does}.
-
-<br/>
-
-
 
 <br/>
 
@@ -74,17 +96,9 @@ Every time we add a new {Component}, we reference it in a few locations:
 
 <br/>
 
-
-
-<br/>
-
 ## Usage example
 
 In this example we can see how our new {Component} can be used:
-
-<br/>
-
-
 
 <br/>
 
