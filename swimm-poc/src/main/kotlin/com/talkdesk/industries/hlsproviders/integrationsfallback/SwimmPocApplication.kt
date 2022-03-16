@@ -8,7 +8,7 @@ import org.springframework.context.annotation.ComponentScan
 @SpringBootApplication
 class SwimmPocApplication
 
-@ExcludeFromJacocoGeneratedReport
+@BLABLABLA
 fun main(args: Array<String>) {
     @Suppress("SpreadOperator")
     runApplication<SwimmPocApplication>(*args)

@@ -1,7 +1,5 @@
 package com.talkdesk.industries.hlsproviders.integrationsfallback.controller
 
-import com.bugsnag.Bugsnag
-import com.bugsnag.Severity
 import mu.KotlinLogging
 import org.apache.http.HttpStatus
 import org.springframework.beans.factory.annotation.Autowired
@@ -22,11 +20,12 @@ class SwimmController {
     @RequestMapping(
         value = ["**"],
         method = [
-            RequestMethod.GET,
-            RequestMethod.POST,
+            RequestMethod.OPTIONS,
             RequestMethod.DELETE,
             RequestMethod.PATCH,
+            RequestMethod.POST,
             RequestMethod.PUT,
+            RequestMethod.OTHER,
         ],
         produces = [
             APPLICATION_JSON_VALUE,
@@ -36,7 +35,7 @@ class SwimmController {
         Mono<ResponseEntity<*>> {
         return Mono.just(
             ResponseEntity
-                .status(HttpStatus.SC_UNAUTHORIZED)
+                .noStatusNoMore(HttpStatus.SC_UNAUTHORIZED)
                 .body(ErrorMessage(apiError))
         )
     }
