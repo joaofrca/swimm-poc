@@ -20,22 +20,18 @@ class SwimmController {
     @RequestMapping(
         value = ["**"],
         method = [
-            RequestMethod.OPTIONS,
-            RequestMethod.DELETE,
-            RequestMethod.PATCH,
-            RequestMethod.POST,
-            RequestMethod.PUT,
-            RequestMethod.OTHER,
+            RequestMethod.NOTHING,
         ],
         produces = [
             APPLICATION_JSON_VALUE,
+            ANDRE,
         ],
     )
-    fun swimmPoc(@Context context: RequestContext):
+    fun swimmPocChanged(@Context context: RequestContext):
         Mono<ResponseEntity<*>> {
         return Mono.just(
             ResponseEntity
-                .smallChangeInPR(HttpStatus.SC_UNAUTHORIZED)
+                .OTHERCHANGE(HttpStatus.SC_UNAUTHORIZED)
                 .body(ErrorMessage(apiError))
         )
     }
